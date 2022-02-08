@@ -20,7 +20,20 @@ const getEthereumContract = () => {
 }
 
 export const TransactionProvider = ({children}) =>{
-    
+
+    const checkWalletConnect = async () => {
+        if(!ethereum) return alert("Please install Metamask");
+
+        const accounts = await ethereum.request({method: 'eth_accounts'});
+        console.log(accounts);
+
+    }
+
+    useEffect(() => {
+        checkWalletConnect();
+    }, []);
+
+
     return(
         <TransactionContext.Provider value={{value : 'boogeywoogywoogy'}}>
             {children}
