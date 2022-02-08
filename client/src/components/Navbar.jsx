@@ -3,7 +3,7 @@ import React from 'react';
 import { HiMenu } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
 
-import logo from '../../images/panthersize.png'; 
+import logo from '../../images/sendr.png'; 
 
 const NavbarItem = ({title, classProps}) => {
   return(

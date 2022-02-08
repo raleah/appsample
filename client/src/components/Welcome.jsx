@@ -30,11 +30,11 @@ const Welcome = () => {
     return (
       <div className="flex w-full justify-center items-center">
         <div className="flex mf:flex-row flex-col items-start justify-between md:p-20 py-12 px-4"></div>
-        <div className= "flex flex-1 justify-start items-start flex-col mf:mr-10">
-          <h1 className= "text-3xl sm:text-5xl mt-5 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-indigo-300 via-purple-400 to-black">
+        <div className= "flex flex-1 justify- items-start flex-col mf:mr-10">
+          <h1 className= "text-3xl sm:text-5xl mt-5 font-semibold text-transparent bg-clip-text bg-gradient-to-br from-indigo-300 via-purple-400 to-black">
             Send Crypto <br /> across the world
           </h1>
-          <p className="text-left -mt-5 text-white md:w-9/12 w-11/12 text-base py-10">
+          <p className="text-left -mt-5 text-white font-light md:w-9/12 w-11/12 text-base py-10">
             Easily buy and sell cryptocurrcies with minimum fees. Sign up bonuses now avaliable.
           </p>
           <button
@@ -47,7 +47,7 @@ const Welcome = () => {
             </p>
           </button>
 
-          <div className='grid sm:grid-cols-3 grid-cols-2w-full mt-10'>
+          <div className="grid sm:grid-cols-3 grid-cols-2w-full mt-10">
 
             <div className={`rounded-tl-2xl ${commonStyles}`}>
               Safe
