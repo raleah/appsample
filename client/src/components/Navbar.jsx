@@ -25,7 +25,7 @@ const Navbar = () => {
             <NavbarItem key={item +index} title={item}/>
             ))}
 
-            <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
+            <li className="bg-indigo-700 py-2 px-7 mx-4 rounded-full cursor-pointer focus:shadow-outline hover:bg-indigo-800">
               Login
             </li>
           
