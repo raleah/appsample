@@ -16,17 +16,35 @@ const getEthereumContract = () => {
         provider,
         signer,
         transactionContract
-    })
+    });
 }
 
 export const TransactionProvider = ({children}) =>{
     const [currentAccount, setCurrentAccount] = useState("");
     
     const checkWalletConnect = async () => {
+
+        try {
+            
         if(!ethereum) return alert("Please install Metamask");
 
         const accounts = await ethereum.request({method: 'eth_accounts'});
-        console.log(accounts);
+
+        if (accounts.length){
+            setCurrentAccount(accounts[0]);
+
+            //get all transactions();
+        }else{
+            console.log("No accounts found");
+        }
+        } catch (error) {
+
+            
+            console.log(error);
+            throw new Error ("no web3 provider");
+            
+        }
+  
 
     }
     
@@ -40,7 +58,7 @@ export const TransactionProvider = ({children}) =>{
             
         } catch (error) {
             console.log(error);
-            throw new Error ("no web3 object");
+            throw new Error ("no web3 provider");
         }
     }
 
@@ -50,7 +68,7 @@ export const TransactionProvider = ({children}) =>{
 
 
     return(
-        <TransactionContext.Provider value={{connectWallet}}>
+        <TransactionContext.Provider value={{connectWallet, currentAccount}}>
             {children}
         </TransactionContext.Provider>
     );

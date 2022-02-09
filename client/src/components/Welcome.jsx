@@ -19,7 +19,7 @@ const Input = ({ placeholder, name, type, value, handleChange }) =>(
 );
 
 const Welcome = () => {
-  const {connectWallet} = useContext(TransactionContext);
+  const {connectWallet, currentAccount} = useContext(TransactionContext);
 
   const handleSubmit = () =>{
 
@@ -35,6 +35,7 @@ const Welcome = () => {
           <p className="text-left -mt-5 text-white font-light md:w-9/12 w-11/12 text-base py-10">
             Easily buy and sell cryptocurrcies with minimum fees. Sign up bonuses now avaliable.
           </p>
+          {currentAccount && (
           <button
           type="button"
           onClick={connectWallet}
@@ -43,7 +44,7 @@ const Welcome = () => {
             <p className="text-white text-base font-semibold">
               Connect Wallet
             </p>
-          </button>
+          </button>)}
 
           <div className="grid sm:grid-cols-3 grid-cols-2w-full mt-10">
 
